@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block main %}
+
+    <p>Send a new email to verify your account</p>
+
+    <form action="/verify" method="post">
+        <div class="form-group m-2">
+            <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email (must be of domain @bu.edu)" type="email"/>
+        </div>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+	 crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>{% block title %}{% endblock %} - BU CS Ambassadors</title>
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <nav class="navbar">
+    <div class="topnav-left">
+      <a class="navbar-brand" href="/"><img src="../static/csa logo.png" alt="BU CSA logo" style="width:80px;height=70px;"></a>
+      <a href="/">BU CS Ambassadors</a>
+    </div>
+    <div class="topnav-right" id="myTopNavRight">
+      <a href="/">Home</a>
+      <a href={{ url_for("ambassadors") }}>Ambassadors</a>
+      <a href={{ url_for("resources") }}>Resources</a>
+      <a href={{ url_for("events") }}>Events</a>
+      {% if 'email' in session %}
+            {% if 'isadmin' in session and session['isadmin'] == True%}
+                <a href={{ url_for("admin") }}>Admin Page</a>
+            {% endif %}
+            <a href={{ url_for("messages")}}>Messages</a>
+            <a href={{ url_for("logout") }}>Log Out</a>
+        {% else %}
+        <a href={{ url_for("login") }}>Log In</a>
+        <a href={{ url_for("register") }}>Register</a>
+        {% endif %}
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </nav>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopNavRight");
+      if (x.className === "topnav-right") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav-right";
+      }
+    }
+  </script><!--P: Idk why it won't collapse, but I've spent too long on this so I'm moving onto real content. Reference: https://www.w3schools.com/howto/howto_js_topnav_responsive.asp-->
+
+  <!--<nav class="navbar navbar-expand-sm navbar-light bg-secondary">
+      <button class ="navbar-toggler" type ="button" data-toggle ="collapse" data-target ="#colNav">
+        <span class ="navbar-toggler-icon"></span>
+      </button>
+      <div class ="right collapse navbar-collapse topnav-right" id ="colNav">
+      </div>
+  </nav>-->
+  
+  <main class="container-fluid p-0">
+      {% if message %}
+        <div class="alert alert-primary border text-center" role="alert">
+            <p class="text-strong"> {{ message }} </p>
+        </div>
+      {% endif %}
+
+      {% block main %}{% endblock %}
+  </main>
+  <!-- toggle needs to work for semi-small/medium screens -->
+  <!-- spacing feels a little odd for the bottom on smaller screens-->
+  <div class="footer-dark mt-auto">
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-3 item">
+            <h3>Visit Us</h3>
+            <ul><!--make address stop glowing when hovered-->
+              <li><a>111 Cummington Mall #140D</a></li>
+              <li><a>Boston, MA 02215</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3 item">
+            <h3>Contact Us</h3>
+            <ul>
+              <li><a href="mailto:bucsambassadors@gmail.com">bucsambassadors@gmail.com</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3 item">
+            <h3>Sign Up For News And Updates</h3>
+            <ul>
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdHRgXwEaqssCN-GaTYXOJOG2cE8l2X7fnaub_l3jGEA_w4Ig/viewform?usp=sf_link">Join Our Mailing List</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-3 item social">
+            <h3>Follow Our Socials</h3>
+            <a href="https://www.facebook.com/csa.bu.397"><i class="icon ion-social-facebook"></i></a>
+            <a href="https://twitter.com/BUCSAmbassadors"><i class="icon ion-social-twitter"></i></a>
+            <a href="https://www.instagram.com/bucsambassadors/"><i class="icon ion-social-instagram"></i></a>
+          </div>
+          <!--<div class="copyright">
+            © 2021 Trustees of Boston University
+          </div>-->
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

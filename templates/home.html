@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      
+      .button {
+        background-color: #CC0000;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        color: white; 
+      }
+
+      .button:hover {
+        background-color: white;
+        color: #CC0000;
+      }
+
+    </style>
+
+<main>
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../static/Header1.png" style="object-fit: cover; filter: brightness(50%);">
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>BU CS Ambassadors</h1>
+            <p>Welcome to the Boston University Computer Science Ambassador’s page! Our Peer Mentors have been working hard to prepare important resources and workshops for the class of 2025.</p>
+            <p><a class="button" href="#">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/stock/cssplash.webp" style="object-fit: cover; filter: brightness(50%);">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Getting Ready for the Fall!</h1>
+            <p>Take a look at our calendar for events coming up for this summer and fall for the class of 2025.</p>
+            <p><a class="button" href="events">Calendar</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+         <img src="../static/stock/bucsjobfair.jpg" style="object-fit: cover; filter: brightness(50%);">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Our Ambassadors</h1>
+            <p>Our peer mentors will be ready to help guide you through your freshman year and beyond. Take a look </p>
+            <p><a class="button" href="ambassadors">Peer Mentors</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- ================================================== -->
+
+  <div class="container section2">
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="../static/Mentors.png" style="width:140px">
+        <h2>Mentors</h2>
+        <p>Our Ambassadors have been trained as peer mentors in a variety of fields, including campus resources, career and internship readiness, and many coding tools used throughout the BU CS curriculum.</p>
+        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="../static/CSatBU.png" style="width:140px">
+        <h2>CS at BU</h2>
+        <p>Utilize our resources to understand what its like to study CS at BU.</p>
+        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="../static/HandH.png" style="width:140px">
+        <h2>Hacks & Hangouts</h2>
+        <p>Hosted by the CS Ambassadors, Hacks and Hangout sessions are a place where incoming Freshmen and transfer students have the ability to get to know each other outside of the formal Orientation experience.</p>
+        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+  <!-- ================================================== -->
+
+    <hr class="section3-divider">
+
+    <div class="row section3">
+      <div class="col-md-7">
+        <h2 class="section3-heading">About Us</h2>
+        <p class="lead">As Ambassadors, our mission is to serve as a platform for a more collaborative, inclusive, and unified computer science community. We have achieved this by encouraging and fostering a diverse community of students through peer mentorship, community-building events, and support from the computer science clubs. Ultimately, we want to foster and encourage a diverse community but we also want to serve as a social network to qualify the BU CS experience as a whole.</p>
+      </div>
+
+      <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg section3-image img-fluid mx-auto" width="500" height="500"
+        src="../static/stock/aboutus.png" 
+        aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+      </div>
+    </div>
+
+    <hr class="section3-divider">
+
+    <div class="row section3">
+      <div class="col-md-7 order-md-2">
+        <h2 class="section3-heading">Networking</h2>
+        <p class="lead">Through our regular events, community partnerships and various workshop series, students are able to get support from Computer Science clubs at Boston University and expand your opportunities for jobs and internships, and meet other students, faculty and alumni in the Computer Science department. </p>
+      </div>
+      <div class="col-md-5 order-md-1">
+
+        <img class="bd-placeholder-img bd-placeholder-img-lg section3-image img-fluid mx-auto" width="500" height="500"
+        src="../static/stock/cssplash5.webp" 
+        aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+        <!--
+        <img class="bd-placeholder-img bd-placeholder-img-lg section3-image img-fluid mx-auto" width="500" height="500"
+        src="../static/stock/cssplash5.webp" 
+        style="wi"
+        aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
+
+      </div>
+    </div>
+
+    <hr class="section3-divider">
+
+    <div class="row section3">
+      <div class="col-md-7">
+        <h2 class="section3-heading">Resources</h2>
+        <p class="lead">In addition to holding events, we also maintain resources to the BU CS community to help students create or improve their resumes, interviews, portfolios, and projects. We also help students find opportunities for students as well as other resources to help Computer Science students at BU succeed throughout their college career.</p>
+      </div>
+      <div class="col-md-5">
+
+        <img class="bd-placeholder-img bd-placeholder-img-lg section3-image img-fluid mx-auto" width="500" height="500"
+        src="../static/stock/resources.jpg" 
+        aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+      </div>
+    </div>
+
+    <hr class="section3-divider">
+  </div>
+</main>
+
+<script src="../static/bootstrap.bundle.min.js"></script>
+
+{% endblock %}
